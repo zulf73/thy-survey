@@ -1,0 +1,11 @@
+// need function to
+// put JSON in Mongo
+// and pull out JSON
+
+function insert_json( json, db, coll ){
+
+}
+
+function find_json( db, coll, criteria ){
+
+}
