@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
+import UploadSurvey from './UploadSurvey';
 function App() {
   return (
     <div className="App">
@@ -18,7 +18,10 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+	  </div>
+	  <div>
+	  <UploadSurvey />
+	  </div>
   );
 }
 
