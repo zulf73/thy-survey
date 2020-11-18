@@ -1,28 +1,16 @@
-import logo from './logo.svg';
+import {Component} from 'react';
+import Survey from './components/Survey';
 import './App.css';
-import UploadSurvey from './UploadSurvey';
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-	  </div>
-	  <div>
-	  <UploadSurvey />
-	  </div>
-  );
+
+import UploadSurvey from './components/UploadSurvey';
+class App extends Component {
+  render() {
+    return (
+	    <div className="App">
+	      <Survey />
+	    </div>
+    );
+  }
 }
 
 export default App;
