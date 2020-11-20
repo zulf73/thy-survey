@@ -29,14 +29,17 @@ fs.writeFileSync( 'testQ.json', testOut, 'utf8' );
 // read the JSON
 // insert the JSON in 'survey' collection
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb+srv://zulf:snaggle41014@cluster0.3cmqe.mongodb.net/<dbname>?retryWrites=true&w=majority";
+var url = "mongodb+srv://unique:unique@cluster0.3cmqe.mongodb.net/<dbname>?retryWrites=true&w=majority";
 var fs = require('fs');
 var JSON = require('dirty-json');
 // these things always have promisify problems
 var jsonFileData = fs.readFileSync('./testQ.json', 'utf8');
 var jsonObject = JSON.parse(jsonFileData);
 
-MongoClient.connect(url, function(err, db) {
+//var buffer = require('fs').readFileSync("mongodb.pem");
+
+MongoClient.connect(url, {useUnifiedTopology:true},
+function(err, db) {
   if (err) throw err;
   var dbo = db.db("prod");
   dbo.collection("surveys").insertOne(jsonObject, function(err, res) {
